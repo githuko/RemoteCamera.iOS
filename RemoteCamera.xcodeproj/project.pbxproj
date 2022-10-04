@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AA144D3228EB4EC600974B94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA144D3128EB4EC600974B94 /* GoogleService-Info.plist */; };
-		AA144D3528EB506900974B94 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AA144D3428EB506900974B94 /* FirebaseInAppMessaging-Beta */; };
-		AA144D3728EB506900974B94 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = AA144D3628EB506900974B94 /* FirebaseInAppMessagingSwift-Beta */; };
-		AA144D3928EB506900974B94 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = AA144D3828EB506900974B94 /* FirebaseMessaging */; };
 		AA98A35328664323007EC4C6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AA98A35228664323007EC4C6 /* Settings.bundle */; };
 		AA98A35528664E9F007EC4C6 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98A35428664E9F007EC4C6 /* SettingsBundleHelper.swift */; };
 		AAAC2F1C286503330050C4BA /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC2F1B286503330050C4BA /* FileDownloader.swift */; };
@@ -41,11 +38,6 @@
 		FA92FA512476EB4A00EEE1F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
-			files = (
-				AA144D3928EB506900974B94 /* FirebaseMessaging in Frameworks */,
-				AA144D3728EB506900974B94 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
-				AA144D3528EB506900974B94 /* FirebaseInAppMessaging-Beta in Frameworks */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -102,9 +94,6 @@
 			);
 			name = RemoteCamera;
 			packageProductDependencies = (
-				AA144D3428EB506900974B94 /* FirebaseInAppMessaging-Beta */,
-				AA144D3628EB506900974B94 /* FirebaseInAppMessagingSwift-Beta */,
-				AA144D3828EB506900974B94 /* FirebaseMessaging */,
 			);
 			productName = MetalCamera;
 			productReference = FA92FA542476EB4A00EEE1F1 /* RemoteCamera.app */;
@@ -135,8 +124,6 @@
 			);
 			mainGroup = FA92FA4B2476EB4A00EEE1F1;
 			packageReferences = (
-				AA144D3328EB506900974B94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				AAB9FC4C28ECAE20008C00BF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FA92FA552476EB4A00EEE1F1 /* Products */;
 			projectDirPath = "";
@@ -369,43 +356,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AA144D3328EB506900974B94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		AAB9FC4C28ECAE20008C00BF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AA144D3428EB506900974B94 /* FirebaseInAppMessaging-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA144D3328EB506900974B94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseInAppMessaging-Beta";
-		};
-		AA144D3628EB506900974B94 /* FirebaseInAppMessagingSwift-Beta */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA144D3328EB506900974B94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = "FirebaseInAppMessagingSwift-Beta";
-		};
-		AA144D3828EB506900974B94 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA144D3328EB506900974B94 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA92FA4C2476EB4A00EEE1F1 /* Project object */;
 }
