@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>340430363007-e2kk5j2uks2sf2rdbvkqsqfum190keaj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.340430363007-e2kk5j2uks2sf2rdbvkqsqfum190keaj</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>340430363007-ledmgu54kpqt2s5qp2pbr27b7fao30uk.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCIoAO0X2y4mfQ1viOlCovSMi0dJ_YL0lw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>340430363007</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.koschutnig.remotecamera</string>
+	<key>PROJECT_ID</key>
+	<string>remotecamera-1663274890474</string>
+	<key>STORAGE_BUCKET</key>
+	<string>remotecamera-1663274890474.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:340430363007:ios:e9ef74644e2e92e224e24a</string>
+</dict>
+</plist>
