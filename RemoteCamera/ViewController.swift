@@ -17,6 +17,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
     private var mDateFormatter = DateFormatter ()
     private var mFilename: String = ""
     private var mBaseUrl: String = "http://185.69.247.114:8000"
+    private var mBitRate: Int = 8000000
     private var mLocalNotificationBar = UILabel ( frame: CGRect ( x: 0, y: 0, width: 200, height: 41 ) )
     private var mRemoteNotificationBar = UILabel ( frame: CGRect ( x: 0, y: 0, width: 200, height: 41 ) )
     private var misHttpFinished = false
@@ -223,6 +224,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
 
     @objc func defaultsChanged () {
         let lRemoteURL = UserDefaults.standard.string ( forKey: "pref_remoteUrl" )
+        mBitRate = UserDefaults.standard.integer ( forKey: "pref_bitRate" )
 
         if ( ( lRemoteURL != nil ) && ( lRemoteURL != "" ) ) {
             mBaseUrl = lRemoteURL!
@@ -254,32 +256,22 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
     //MARK:- Camera Setup
     func setupAndStartCaptureSession () {
         DispatchQueue.global ( qos: .userInitiated ).async {
-            //init session
             self.mCaptureSession = AVCaptureSession ()
-            //start configuration
             self.mCaptureSession.beginConfiguration ()
             
-            //session specific configuration
             if self.mCaptureSession.canSetSessionPreset ( .hd4K3840x2160 ) {
                 self.mCaptureSession.sessionPreset = .hd4K3840x2160
             }
 
             self.mCaptureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
-            
-            //setup inputs
             self.setupInputs ()
             
             DispatchQueue.main.async {
-                //setup preview layer
                 self.setupPreviewLayer ()
             }
             
-            //setup output
             self.setupOutput ()
-            
-            //commit configuration
             self.mCaptureSession.commitConfiguration ()
-            //start running it
             self.mCaptureSession.startRunning ()
         }
     }
