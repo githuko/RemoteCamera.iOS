@@ -16,6 +16,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
     private var mInitialScale: CGFloat = 4.0
     private var mDateFormatter = DateFormatter ()
     private var mFilename: String = ""
+    private var mFileURL: URL!
     private var mBaseUrl: String = "http://185.69.247.114:8000"
     private var mBitRate: Int = 8000000
     private var mLocalNotificationBar = UILabel ( frame: CGRect ( x: 0, y: 0, width: 200, height: 41 ) )
@@ -75,6 +76,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
 
     // MARK: - Actions
     @objc func handleLongPress ( _ sender: UILongPressGestureRecognizer ) {
+        
         switch sender.state {
             case .began:
                 mRemoteNotificationBar.text = ""
@@ -83,6 +85,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
                 if ( mFilename == "" ) {
                     mFilename = getCurrentDate ()
                 }
+
                 FileDownloader.downloadVideo ( _remoteUrlString: mBaseUrl + "/get", _filename: mFilename + ".MP4" )
             case .changed:
                 return
@@ -107,6 +110,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate, CL
             let lLocation = mLocationManager.location
             let lPaths = FileManager.default.urls ( for: .documentDirectory, in: .userDomainMask )
             let lFileUrl = lPaths [ 0 ].appendingPathComponent ( mFilename )
+            mFileURL = lFileUrl
             var lMetadata: [ AVMutableMetadataItem ] = []
 
             let lLocation_metadata = AVMutableMetadataItem ()
